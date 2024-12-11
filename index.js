@@ -30,14 +30,15 @@ app.get('/', (req, res) => {
 
 // Create a new user
 app.post('/users', async (req, res) => {
-  try {
-    const user = new User(req.body);
-    await user.save();
-    res.status(201).json(user);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+    try {
+      const user = new User(req.body);
+      await user.save();
+      res.status(201).json(user);
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+  });
+  
 
 // Get all users
 app.get('/users', async (req, res) => {
