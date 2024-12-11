@@ -23,6 +23,11 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Routes
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Server is running');
+  });
+
 // Create a new user
 app.post('/users', async (req, res) => {
   try {
